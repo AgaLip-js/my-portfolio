@@ -1,69 +1,51 @@
-import React, { useRef, useState, useEffect } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import './Root.css';
+import React, { useEffect } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { useOnClickOutside } from './hooks';
+import Aos from 'aos';
 import GlobalStyle from './theme/GlobalStyle';
 import Navbar from './components/organisms/Navbar';
 import LandingPage from './views/LandingPage';
-import { theme } from './theme/MainTheme'
+import { theme } from './theme/MainTheme';
 import AboutMeView from './views/AboutMeView';
 import SkillsView from './views/SkillsView';
 import PortfolioView from './views/PortfolioView';
-
-const StyledViews = styled.div`
-height:100%;
-`
+import ContactView from './views/ContactView';
+import ViewParent from './views/ViewParent';
+import Burger from './components/atoms/Burger';
+import Menu from './components/organisms/Menu';
 
 function Root() {
-  console.log(window.innerHeight);
-
-  const [navBackground, setNavBackground] = useState(false);
-  // const [activeClass, setActiveClass] = useState(false);
-  // useEffect(() => {
-  //   Events.scrollEvent.register('begin', function (to, element) {
-  //     console.log(arguments);
-  //   });
-
-  //   Events.scrollEvent.register('end', function (to, element) {
-  //     console.log("end", arguments[0]);
-  //   });
-
-  //   scrollSpy.update();
-  //   return () => {
-  //     Events.scrollEvent.remove('begin');
-  //     Events.scrollEvent.remove('end');
-  //   }
-  // }, [arguments])
-
-
-
-  const navRef = useRef()
-  navRef.current = navBackground;
+  const [open, setOpen] = React.useState(false);
+  const node = React.useRef();
+  useOnClickOutside(node, () => setOpen(false));
   useEffect(() => {
-    const handleScroll = () => {
-      const show = window.scrollY >= window.innerHeight - 125;
-      if (navRef.current !== show) {
-        setNavBackground(show)
-        // setActiveClass(true)
-      }
-    }
-    document.addEventListener('scroll', handleScroll)
-    // return () => {
-    //   document.removeEventListener('scroll', handleScroll)
-    // }
-  }, [])
-  console.log(window.innerHeight);
+    Aos.init({ duration: 1500, once: true });
+  }, []);
 
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Navbar backgroundColor={navBackground ? '#141819' : 'transparent'} />
-        <LandingPage id="landingPage" />
-        <StyledViews>
+        <Navbar />
+        <div ref={node}>
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+        </div>
+        <ViewParent>
+          <LandingPage id="landingPage" />
+        </ViewParent>
+        <ViewParent>
           <AboutMeView id="aboutMe" name="aboutMe" />
+        </ViewParent>
+        <ViewParent>
           <SkillsView id="skills" name="skills" />
+        </ViewParent>
+        <ViewParent>
           <PortfolioView id="portfolio" />
-        </StyledViews>
+        </ViewParent>
+        <ViewParent>
+          <ContactView id="contact" />
+        </ViewParent>
       </ThemeProvider>
     </>
   );
