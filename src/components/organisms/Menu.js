@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-scroll';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-scroll";
 
 const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: #151718;
-  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   text-align: left;
   position: fixed;
   height: 50%;
@@ -65,7 +65,7 @@ const StyledItemBar = styled.span`
   margin-top: 5px;
   ::before,
   ::after {
-    content: '';
+    content: "";
     height: 2px;
     width: 0;
     bottom: 1px;
@@ -102,25 +102,61 @@ const Menu = ({ open, setOpen }) => {
     <StyledMenu open={open}>
       <StyledListItemView>
         <StyledListItem>
-          <StyledLink onClick={() => setOpen(!open)} activeClass="active" to="aboutMe" spy={true} smooth={true} duration={1000} isDynamic={true} offset={-70}>
+          <StyledLink
+            onClick={() => setOpen(!open)}
+            activeClass="active"
+            to="aboutMe"
+            spy={true}
+            smooth={true}
+            duration={1000}
+            isDynamic={true}
+            offset={-70}
+          >
             About Me
             <StyledItemBar />
           </StyledLink>
         </StyledListItem>
         <StyledListItem>
-          <StyledLink onClick={() => setOpen(!open)} activeClass="active" to="skills" spy={true} smooth={true} offset={-70} duration={1000} isDynamic={true}>
+          <StyledLink
+            onClick={() => setOpen(!open)}
+            activeClass="active"
+            to="skills"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={1000}
+            isDynamic={true}
+          >
             Skills
             <StyledItemBar />
           </StyledLink>
         </StyledListItem>
         <StyledListItem>
-          <StyledLink onClick={() => setOpen(!open)} activeClass="active" to="portfolio" spy={true} smooth={true} offset={-70} duration={1000} isDynamic={true}>
+          <StyledLink
+            onClick={() => setOpen(!open)}
+            activeClass="active"
+            to="portfolio"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={1000}
+            isDynamic={true}
+          >
             Portfolio
             <StyledItemBar />
           </StyledLink>
         </StyledListItem>
         <StyledListItem>
-          <StyledLink onClick={() => setOpen(!open)} activeClass="active" to="contact" spy={true} smooth={true} offset={-70} duration={1000} isDynamic={true}>
+          <StyledLink
+            onClick={() => setOpen(!open)}
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={1000}
+            isDynamic={true}
+          >
             Contact
             <StyledItemBar />
           </StyledLink>
