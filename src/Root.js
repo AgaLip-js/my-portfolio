@@ -1,18 +1,19 @@
-import React, { useEffect } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { useOnClickOutside } from './hooks';
-import Aos from 'aos';
-import GlobalStyle from './theme/GlobalStyle';
-import Navbar from './components/organisms/Navbar';
-import LandingPage from './views/LandingPage';
-import { theme } from './theme/MainTheme';
-import AboutMeView from './views/AboutMeView';
-import SkillsView from './views/SkillsView';
-import PortfolioView from './views/PortfolioView';
-import ContactView from './views/ContactView';
-import ViewParent from './views/ViewParent';
-import Burger from './components/atoms/Burger';
-import Menu from './components/organisms/Menu';
+import React, { useEffect } from "react";
+import { ThemeProvider } from "styled-components";
+import { useOnClickOutside } from "./hooks";
+import Aos from "aos";
+import GlobalStyle from "./theme/GlobalStyle";
+import Navbar from "./components/organisms/Navbar";
+import LandingPage from "./views/LandingPage";
+import { theme } from "./theme/MainTheme";
+import AboutMeView from "./views/AboutMeView";
+import SkillsView from "./views/SkillsView";
+import PortfolioView from "./views/PortfolioView";
+import ContactView from "./views/ContactView";
+import ViewParent from "./views/ViewParent";
+import Burger from "./components/atoms/Burger";
+import Menu from "./components/organisms/Menu";
+import Footer from "./components/organisms/Footer";
 
 function Root() {
   const [open, setOpen] = React.useState(false);
@@ -46,6 +47,7 @@ function Root() {
         <ViewParent>
           <ContactView id="contact" />
         </ViewParent>
+        <Footer />
       </ThemeProvider>
     </>
   );

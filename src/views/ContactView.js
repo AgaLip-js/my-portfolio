@@ -1,16 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
-import 'aos/dist/aos.css';
-import { faFacebook, faInstagram, faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Form from '../components/organisms/Form';
-import Footer from '../components/organisms/Footer';
-import './ContactView.css';
+import React from "react";
+import styled from "styled-components";
+import "aos/dist/aos.css";
+import {
+  faFacebook,
+  faInstagram,
+  faGoogle,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Form from "../components/organisms/Form";
+import "./ContactView.css";
+import MyCv from "../assets/files/AgataLipiakCV-eng.pdf";
 
 const StyledContainer = styled.div`
   height: 100vh;
   width: 100%;
   position: relative;
+  @media (max-height: 800px) {
+    height: 100%;
+  }
 `;
 const StyledWrapper = styled.div`
   height: 100%;
@@ -31,7 +40,10 @@ const StyledSocialIcon = styled.ul`
   background: white;
   position: relative;
   padding: 0;
-  margin: 20px 0;
+  margin: 20px 0 40px 0;
+  @media (max-width: 500px) {
+    margin: 20px 0;
+  }
 `;
 const StyledList = styled.li`
   width: fit-content;
@@ -215,6 +227,21 @@ const StyledTitle = styled.p`
     font-size: 14px;
   }
 `;
+const StyledDownloadFile = styled.div`
+  text-align: center;
+`;
+const StyledDownloadCV = styled.a`
+  font-size: 50px;
+  color: #e7e7e7;
+  transition: all 0.5s ease;
+  :hover {
+    color: black;
+  }
+  @media (max-width: 844px) {
+    font-size: 40px;
+  }
+`;
+const StyledDownloadTitle = styled(StyledTitle)``;
 
 const ContactView = ({ id }) => {
   return (
@@ -226,9 +253,17 @@ const ContactView = ({ id }) => {
           <StyledSocialIcon>
             <StyledList>
               <StyledFacebookIcon>
-                <StyledLink href={'https://www.facebook.com/agata.sobstyl'} target="_blank" rel="noopener">
+                <StyledLink
+                  href={"https://www.facebook.com/agata.sobstyl"}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <StyledFacebookLogo>
-                    <FontAwesomeIcon icon={faFacebook} size="2x" className="fontIcon" />
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      size="2x"
+                      className="fontIcon"
+                    />
                   </StyledFacebookLogo>
                   <StyledTitleFacebook>Facebook</StyledTitleFacebook>
                 </StyledLink>
@@ -236,9 +271,17 @@ const ContactView = ({ id }) => {
             </StyledList>
             <StyledList>
               <StyledInstagramIcon>
-                <StyledLink href={'https://www.instagram.com/gunin25/?hl=pl'} target="_blank" rel="noopener">
+                <StyledLink
+                  href={"https://www.instagram.com/gunin25/?hl=pl"}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <StyledInstagramLogo>
-                    <FontAwesomeIcon icon={faInstagram} size="2x" className="fontIcon" />
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      size="2x"
+                      className="fontIcon"
+                    />
                   </StyledInstagramLogo>
                   <StyledTitleInstagram>Instagram</StyledTitleInstagram>
                 </StyledLink>
@@ -246,9 +289,17 @@ const ContactView = ({ id }) => {
             </StyledList>
             <StyledList>
               <StyledGoogleIcon>
-                <StyledLink href={'mailto:agatalipiak25@gmail.com'} target="_blank" rel="noopener">
+                <StyledLink
+                  href={"mailto:agatalipiak25@gmail.com"}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <StyledGoogleLogo>
-                    <FontAwesomeIcon icon={faGoogle} size="2x" className="fontIcon" />
+                    <FontAwesomeIcon
+                      icon={faGoogle}
+                      size="2x"
+                      className="fontIcon"
+                    />
                   </StyledGoogleLogo>
                   <StyledTitleGoogle>Gmail</StyledTitleGoogle>
                 </StyledLink>
@@ -256,18 +307,36 @@ const ContactView = ({ id }) => {
             </StyledList>
             <StyledList>
               <StyledGitIcon>
-                <StyledLink href={'https://github.com/AgaLip-js'} target="_blank" rel="noopener">
+                <StyledLink
+                  href={"https://github.com/AgaLip-js"}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <StyledGitLogo>
-                    <FontAwesomeIcon icon={faGithub} size="2x" className="fontIcon" />
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      size="2x"
+                      className="fontIcon"
+                    />
                   </StyledGitLogo>
                   <StyledTitleGit>GitHub</StyledTitleGit>
                 </StyledLink>
               </StyledGitIcon>
             </StyledList>
           </StyledSocialIcon>
+          <StyledDownloadFile>
+            <StyledDownloadTitle>Download my CV</StyledDownloadTitle>
+            <StyledDownloadCV
+              href={MyCv}
+              download="AgataLipiak-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faFileDownload} />
+            </StyledDownloadCV>
+          </StyledDownloadFile>
         </StyledContactContainer>
       </StyledWrapper>
-      <Footer />
     </StyledContainer>
   );
 };
