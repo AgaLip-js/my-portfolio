@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import styled, { keyframes, css } from 'styled-components';
-import { Link } from 'react-scroll';
-import image from '../assets/pictures/moje.webp';
+import React, { useEffect, useState } from "react";
+import styled, { keyframes, css } from "styled-components";
+import { Link } from "react-scroll";
+import image from "../assets/pictures/moje.webp";
 
-import 'aos/dist/aos.css';
-import zdj1 from '../assets/pictures/zdj11.webp';
-import zdj2 from '../assets/pictures/zdj22.webp';
-import zdj3 from '../assets/pictures/zdj33.webp';
-import CardButton from '../components/atoms/CardButton';
+import "aos/dist/aos.css";
+import zdj1 from "../assets/pictures/zdj11.webp";
+import zdj2 from "../assets/pictures/zdj22.webp";
+import zdj3 from "../assets/pictures/zdj33.webp";
+import CardButton from "../components/atoms/CardButton";
 
 const showText = keyframes`
  0% {
@@ -102,7 +102,8 @@ const StyledTitle = styled.h2`
   ${(props) =>
     props.secondary &&
     css`
-      animation: ${typing} 2s steps(30, end) forwards, ${blinkCaret} 0.75s step-end infinite;
+      animation: ${typing} 2s steps(30, end) forwards,
+        ${blinkCaret} 0.75s step-end infinite;
       animation-delay: 1s;
     `};
   @media (max-width: 1000px) and (min-width: 651px) {
@@ -111,7 +112,8 @@ const StyledTitle = styled.h2`
     ${(props) =>
       props.secondary &&
       css`
-        animation: ${typing2} 2s steps(30, end) forwards, ${blinkCaret} 0.75s step-end infinite;
+        animation: ${typing2} 2s steps(30, end) forwards,
+          ${blinkCaret} 0.75s step-end infinite;
         animation-delay: 1s;
       `};
   }
@@ -121,7 +123,8 @@ const StyledTitle = styled.h2`
     ${(props) =>
       props.secondary &&
       css`
-        animation: ${typing3} 2s steps(30, end) forwards, ${blinkCaret} 0.75s step-end infinite;
+        animation: ${typing3} 2s steps(30, end) forwards,
+          ${blinkCaret} 0.75s step-end infinite;
         animation-delay: 1s;
       `};
   }
@@ -177,7 +180,7 @@ const StyledText = styled.div`
   transform-style: preserve-3d;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transform: ${({ props }) => props && 'rotateY(180deg)'};
+  transform: ${({ props }) => props && "rotateY(180deg)"};
   @media (max-width: 1001px) {
     font-size: ${({ theme }) => theme.fontSize.xs};
   }
@@ -300,8 +303,8 @@ const AboutMeView = ({ id, name }) => {
   const [visible, setvisible] = useState(false);
 
   useEffect(() => {
-    const page = document.querySelector('.aboutMe');
-    window.addEventListener('scroll', () => {
+    const page = document.querySelector(".aboutMe");
+    window.addEventListener("scroll", () => {
       const pageTop = page.offsetTop;
       const slideInAt = window.pageYOffset + window.innerHeight;
 
@@ -325,16 +328,23 @@ const AboutMeView = ({ id, name }) => {
       <StyledTitle secondary={state}>Hello, my name is Agata.</StyledTitle>
       <StyledContainer>
         <StyledLeftContainer>
-          <StyledPhotoBorder icon={image} data-aos="fade-up"></StyledPhotoBorder>
+          <StyledPhotoBorder
+            icon={image}
+            data-aos="fade-up"
+          ></StyledPhotoBorder>
         </StyledLeftContainer>
         <StyledInfo data-aos="fade-up">
           <StyledText props={clickStatus}>
             <StyledFrontCard>
               <StyledTextInside>Few words about me</StyledTextInside>
-              I am 27 years old and currently work as a Product Engineer. I live in Wroclaw and for half a year I have been intensively learning programming to get a job as a Front-end Developer.
+              I am 27 years old and currently work as a Product Engineer. I live
+              in Wroclaw and since last year I have been intensively learning
+              programming to get a job as a Front-end Developer.
               <br />
               <br />
-              Programming has become my passion, that's why I put a lot of heart and effort into understanding issues and writing good code. I put emphasis on simplicity, functionality and dynamics.
+              Programming has become my passion, that's why I put a lot of heart
+              and effort into understanding issues and writing good code. I put
+              emphasis on simplicity, functionality and dynamics.
               <br />
               <br />
               <CardButton type="button" onClick={btnClick} visible={visible}>
@@ -348,7 +358,10 @@ const AboutMeView = ({ id, name }) => {
                   <StyledImg src={zdj2} alt="zdj2"></StyledImg>
                   <StyledImg src={zdj3} alt="zdj3"></StyledImg>
                 </StyledPhoto>
-                In my free time I like cooking and watching movies. I'm interested in home brewing and I'm a fan of craft beers. You will often find me in the gym or on the field playing football. In winter I spend time skiing.
+                In my free time I like cooking and watching movies. I'm
+                interested in home brewing and I'm a fan of craft beers. You
+                will often find me in the gym or on the field playing football.
+                In winter I spend time skiing.
               </StyledPhotoContainer>
               <CardButton type="button" onClick={returnClick}>
                 Return
@@ -358,7 +371,15 @@ const AboutMeView = ({ id, name }) => {
         </StyledInfo>
       </StyledContainer>
       <StyledSection data-aos="fade-in">
-        <StyledLink activeClass="active" to="skills" spy={true} smooth={true} duration={1000} isDynamic={true} offset={-70}>
+        <StyledLink
+          activeClass="active"
+          to="skills"
+          spy={true}
+          smooth={true}
+          duration={1000}
+          isDynamic={true}
+          offset={-70}
+        >
           <StyledSpan></StyledSpan>
           <StyledSpan></StyledSpan>
           <StyledSpan></StyledSpan>My skills

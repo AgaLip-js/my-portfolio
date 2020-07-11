@@ -11,7 +11,7 @@ import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Form from "../components/organisms/Form";
 import "./ContactView.css";
-import MyCv from "../assets/files/AgataLipiakCV-eng.pdf";
+import MyCv from "../assets/files/CV_EN-portfolio - Agata Lipiak.pdf";
 
 const StyledContainer = styled.div`
   height: 100vh;
