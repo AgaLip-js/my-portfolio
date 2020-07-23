@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledButton = styled.button`
   height: 40px;
@@ -12,7 +12,7 @@ const StyledButton = styled.button`
   border: 2px solid transparent;
   border-radius: 2px;
   transition: background-color 0.3s;
-  width: 150px;
+
   font-size: 16px;
   background-color: #ef0d33;
   font-family: 'Poppins', sans-serif;
@@ -23,8 +23,8 @@ const StyledButton = styled.button`
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   transform-style: preserve-3d;
-  visibility: ${({ visible }) => visible && 'hidden'};
-  opacity: ${({ visible }) => visible && '0'};
+  visibility: ${({ visible }) => visible && "hidden"};
+  opacity: ${({ visible }) => visible && "0"};
   transition: visibility 0s linear 0.2s, opacity 0.3s linear;
   margin-bottom: 10px;
 

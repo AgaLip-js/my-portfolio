@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import gallery from '../assets/pictures/photo-gallery.webp';
-import organizer from '../assets/pictures/recipe-organizer.webp';
-import portfolio from '../assets/pictures/my-portfolio.webp';
-import 'aos/dist/aos.css';
-import Button from '../components/atoms/Button';
-import { Link } from 'react-scroll';
+import React from "react";
+import styled from "styled-components";
+import weather from "../assets/pictures/weather.webp";
+import organizer from "../assets/pictures/recipe-organizer.webp";
+import portfolio from "../assets/pictures/my-portfolio.webp";
+import "aos/dist/aos.css";
+import Button from "../components/atoms/Button";
+import { Link } from "react-scroll";
 
 const StyledWrapper = styled.div`
   height: 100%;
@@ -32,7 +32,7 @@ const StyledFirstBlock = styled.span`
 `;
 
 const StyledNameTitle = styled.h1`
-  font-family: 'Poppins';
+  font-family: "Poppins";
   color: ${({ theme }) => theme.secondary};
   font-size: 34px;
   margin: 10px;
@@ -125,7 +125,12 @@ const PortfolioView = ({ id }) => {
     <StyledWrapper id={id}>
       <StyledTitle>
         <StyledFirstBlock data-aos="zoom-in" data-aos-duration="2000" />
-        <StyledNameTitle data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-delay="500">
+        <StyledNameTitle
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+          data-aos-delay="500"
+        >
           My Projects
         </StyledNameTitle>
       </StyledTitle>
@@ -133,16 +138,32 @@ const PortfolioView = ({ id }) => {
         <StyledCard data-aos="zoom-in">
           <StyledCardFace1>
             <StyledContent>
-              <StyledImgContent src={gallery} alt="gallery" />
-              <StyledTitleContent>Photo gallery</StyledTitleContent>
+              <StyledImgContent src={weather} alt="weather" />
+              <StyledTitleContent>Weather App</StyledTitleContent>
             </StyledContent>
           </StyledCardFace1>
           <StyledCardFace2>
             <StyledContent>
-              <StyledContentText>Photo gallery of places where I would like to go. I used HTML, CSS, Flexbox and Javascript technologies.</StyledContentText>
+              <StyledContentText>
+                Web application for checking the current weather in different
+                cities, deploy on Heroku. I used React, Node.js + Express and
+                PostgreSQL technologies.
+              </StyledContentText>
               <StyledLink>
-                <StyledLinkButton href='https://www.alipiak.com/gallery' target="_blank" rel="noopener">Demo</StyledLinkButton>
-                <StyledLinkButton href="https://github.com/AgaLip-js/photo-galery" target="_blank" rel="noopener"> GitHub</StyledLinkButton>
+                <StyledLinkButton
+                  href="https://weather-app-db2020.herokuapp.com"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Demo
+                </StyledLinkButton>
+                <StyledLinkButton
+                  href="https://github.com/AgaLip-js/fullstack-weather-app.git"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub
+                </StyledLinkButton>
               </StyledLink>
             </StyledContent>
           </StyledCardFace2>
@@ -156,10 +177,25 @@ const PortfolioView = ({ id }) => {
           </StyledCardFace1>
           <StyledCardFace2>
             <StyledContent>
-              <StyledContentText>Website dedicated to storing, adding and planning recipes. I used React, Styled Components, Redux technologies.</StyledContentText>
+              <StyledContentText>
+                Website dedicated to storing, adding and planning recipes. I
+                used React, Styled Components, Redux technologies.
+              </StyledContentText>
               <StyledLink>
-                <StyledLinkButton href='https://www.alipiak.com/recipe' target="_blank" rel="noopener">Demo</StyledLinkButton>
-                <StyledLinkButton href="https://github.com/AgaLip-js/RecipeOrganizerInREACT" target="_blank" rel="noopener"> GitHub</StyledLinkButton>
+                <StyledLinkButton
+                  href="https://www.alipiak.com/recipe"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Demo
+                </StyledLinkButton>
+                <StyledLinkButton
+                  href="https://github.com/AgaLip-js/RecipeOrganizerInREACT"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub
+                </StyledLinkButton>
               </StyledLink>
             </StyledContent>
           </StyledCardFace2>
@@ -173,16 +209,39 @@ const PortfolioView = ({ id }) => {
           </StyledCardFace1>
           <StyledCardFace2>
             <StyledContent>
-              <StyledContentText>Website presenting my portfolio. I used React and Styled Components technologies.</StyledContentText>
+              <StyledContentText>
+                Website presenting my portfolio. I used React and Styled
+                Components technologies.
+              </StyledContentText>
               <StyledLink>
-                <StyledLinkButton href='https://www.alipiak.com' target="_blank" rel="noopener">Demo</StyledLinkButton>
-                <StyledLinkButton href="https://github.com/AgaLip-js/my-portfolio" target="_blank" rel="noopener"> GitHub</StyledLinkButton>
+                <StyledLinkButton
+                  href="https://www.alipiak.com"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Demo
+                </StyledLinkButton>
+                <StyledLinkButton
+                  href="https://github.com/AgaLip-js/my-portfolio"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub
+                </StyledLinkButton>
               </StyledLink>
             </StyledContent>
           </StyledCardFace2>
         </StyledCard>
       </StyledContainer>
-      <Link activeClass="active" to="contact" spy={true} smooth={true} duration={1000} isDynamic={true} offset={-70}>
+      <Link
+        activeClass="active"
+        to="contact"
+        spy={true}
+        smooth={true}
+        duration={1000}
+        isDynamic={true}
+        offset={-70}
+      >
         <Button type="button">Contact Me</Button>
       </Link>
     </StyledWrapper>
