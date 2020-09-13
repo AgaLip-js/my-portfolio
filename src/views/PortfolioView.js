@@ -3,6 +3,7 @@ import styled from "styled-components";
 import weather from "../assets/pictures/weather.webp";
 import organizer from "../assets/pictures/recipe-organizer.webp";
 import portfolio from "../assets/pictures/my-portfolio.webp";
+import budzetomat from "../assets/pictures/budzetomat.webp";
 import "aos/dist/aos.css";
 import Button from "../components/atoms/Button";
 import { Link } from "react-scroll";
@@ -52,7 +53,7 @@ const StyledCard = styled.div`
 `;
 const StyledCardFace1 = styled.div`
   max-width: 300px;
-  height: 200px;
+  height: 210px;
   transition: 0.5s;
   position: relative;
   background: #333;
@@ -87,10 +88,10 @@ const StyledTitleContent = styled.h3`
 const StyledCardFace2 = styled(StyledCardFace1)`
   z-index: 1;
   background: #fff;
-  padding: 20px;
+  padding: 15px;
   box-sizing: border-box;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-  transform: translateY(-100px);
+  transform: translateY(-110px);
   ${StyledCard}:hover & {
     transform: translateY(0);
     background: #fff;
@@ -172,7 +173,7 @@ const PortfolioView = ({ id }) => {
           <StyledCardFace1>
             <StyledContent>
               <StyledImgContent src={organizer} alt="organizer" />
-              <StyledTitleContent>Recipe organizer</StyledTitleContent>
+              <StyledTitleContent>Recipe Organizer</StyledTitleContent>
             </StyledContent>
           </StyledCardFace1>
           <StyledCardFace2>
@@ -215,14 +216,34 @@ const PortfolioView = ({ id }) => {
               </StyledContentText>
               <StyledLink>
                 <StyledLinkButton
-                  href="https://www.alipiak.com"
+                  href="https://github.com/AgaLip-js/my-portfolio"
                   target="_blank"
                   rel="noopener"
                 >
-                  Demo
+                  GitHub
                 </StyledLinkButton>
+              </StyledLink>
+            </StyledContent>
+          </StyledCardFace2>
+        </StyledCard>
+        <StyledCard data-aos="zoom-in">
+          <StyledCardFace1>
+            <StyledContent>
+              <StyledImgContent src={budzetomat} alt="budzetomat" />
+              <StyledTitleContent>Home Budget</StyledTitleContent>
+            </StyledContent>
+          </StyledCardFace1>
+          <StyledCardFace2>
+            <StyledContent>
+              <StyledContentText>
+                My newest Fullstack React App to manage the home budget. The app
+                is built on technologies: PostgreSQL, Express, React, Redux and
+                Node.js. This project is under development, after completion it
+                will be deployed to the Heroku server.
+              </StyledContentText>
+              <StyledLink>
                 <StyledLinkButton
-                  href="https://github.com/AgaLip-js/my-portfolio"
+                  href="https://github.com/AgaLip-js/fullstack-homebudget"
                   target="_blank"
                   rel="noopener"
                 >
