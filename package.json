@@ -13,7 +13,7 @@
     "@fortawesome/react-fontawesome": "^0.1.9",
     "animate.css": "^4.1.0",
     "aos": "^3.0.0-beta.6",
-    "elliptic": "^6.5.3",
+    "elliptic": "^6.5.4",
     "emailjs-com": "^2.4.1",
     "lodash": "^4.17.20",
     "react": "^16.13.1",
